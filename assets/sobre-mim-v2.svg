@@ -1,0 +1,269 @@
+<svg width="900" height="506" viewBox="0 0 900 506" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sobre mim">
+<foreignObject x="0" y="0" width="900" height="506">
+<div xmlns="http://www.w3.org/1999/xhtml">
+<style>
+  .frame{
+    --ink:#fbeee0; --mut:#b3b6d6; --acc:#f2916e;
+    --cartline:rgba(255,255,255,.25);
+    --lcd:rgba(18,21,42,.7); --lcdink:#fbeee0;
+    --card:rgba(255,255,255,.08); --line:rgba(255,255,255,.4); --accsoft:rgba(90,62,72,.8); --thead:rgba(14,16,34,.45);
+    box-sizing:border-box; width:894px; height:500px; margin:3px; position:relative; overflow:hidden;
+    background:transparent; border:none;
+  }
+  .frame *{box-sizing:border-box;}
+  .mono{font-family:"Cascadia Code",Consolas,"Courier New",monospace;}
+  h1,h3,p,ul{margin:0;}
+  .cart{position:relative; z-index:1; color:var(--ink); font-family:"Segoe UI",system-ui,sans-serif; line-height:1.55; padding:34px 10px 22px;}
+  .slots{display:flex; align-items:center; gap:7px; flex:none;}
+  .slots i{width:10px; height:10px; border-radius:3px; background:var(--line); display:block;}
+  .slots i:first-child{background:var(--acc); animation:pulse 2.4s ease-in-out infinite;}
+  @keyframes pulse{50%{opacity:.35;}}
+  .cart-head{display:flex; align-items:center; justify-content:center; gap:14px; text-align:center; flex-wrap:wrap;}
+  .brandmark{position:absolute; top:14px; left:22px; right:22px; display:flex; align-items:center; gap:14px;}
+  .gatolane{position:relative; flex:1; min-width:0; height:30px;}
+  #gato{position:absolute; top:50%; margin-top:-13px; width:32px; height:auto; animation:patrolBrand 6s ease-in-out infinite alternate;}
+  @keyframes patrolBrand{ from{ left:0; } to{ left:calc(100% - 32px); } }
+  .brandname-pixel{height:20px; width:auto; display:block;}
+  .brandname-pixel g{fill:#CBC0B7;}
+  #gato .corpo rect, #gato .olho{fill:var(--acc);}
+  @keyframes flutua{
+    0%,100%{transform:translateY(0) rotate(0deg);}
+    22%{transform:translateY(-2px) rotate(-4deg);}
+    46%{transform:translateY(0) rotate(0deg);}
+    70%{transform:translateY(-2px) rotate(4deg);}
+  }
+  #gato .olho{animation:piscada 3.1s steps(1) infinite;}
+  @keyframes piscada{0%,91%,100%{opacity:1;}92%,97%{opacity:0;}}
+  #gato .olhos{animation:olhar 10.4s steps(1) infinite;}
+  @keyframes olhar{
+    0%,100%{transform:translateX(0);}
+    18%,27%{transform:translateX(-1px);}
+    28%,63%{transform:translateX(0);}
+    64%,73%{transform:translateX(1px);}
+    74%{transform:translateX(0);}
+  }
+  .genre{display:inline-block; margin-top:4px; font-family:"Cascadia Code",Consolas,monospace; font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; font-weight:700; color:#FBEEE0; background:var(--accsoft); border:1.5px solid var(--acc); padding:5px 16px; border-radius:999px;}
+  .painel{position:relative; margin-top:30px; background:transparent; border:none; padding:22px 0 0;}
+  .aba{
+    position:absolute; top:-13px; left:16px; z-index:3;
+    font-family:"Cascadia Code",Consolas,monospace; font-size:.64rem; letter-spacing:.16em;
+    font-weight:700; color:var(--ink); background:var(--thead);
+    border:1px solid var(--line); padding:4px 13px; border-radius:8px; box-shadow:0 3px 8px -3px rgba(0,0,0,.5);
+  }
+  .projtitulo{display:block; text-align:center; font-family:Georgia,serif; font-weight:500; font-size:1.3rem; line-height:1.28; color:var(--ink); margin:6px 0 10px;}
+  .projtitulo em{color:var(--acc); font-style:normal;}
+  .projsub{text-align:center; color:var(--ink); font-size:.86rem; line-height:1.6; margin-bottom:14px;}
+  .combo{position:relative; display:flex; flex-direction:column; gap:6px; background:transparent; border:none; padding:13px 0 0;}
+  .terminline{border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:11px 6px; display:flex; align-items:flex-start; gap:8px;}
+  .terminline .prompt{margin-right:0; line-height:1.6; font-family:"Cascadia Code",Consolas,monospace; font-size:.8rem;}
+  .combo .terminline p{font-size:.74rem; line-height:1.6; color:var(--ink); text-align:left; margin:0;}
+  .combo h3:not(.projtitulo){font-family:Georgia,serif; font-weight:500; font-size:.96rem; color:var(--ink); display:flex; align-items:center; gap:8px; flex-wrap:wrap;}
+  .combo p{font-size:.86rem; line-height:1.55;}
+  .idgrid{display:flex; flex-direction:column; gap:10px;}
+  .idrow{display:flex; flex-direction:column; gap:10px;}
+  .idrow .idcard{flex:1; min-width:0;}
+  .idcard{position:relative; background:transparent; border:none; border-radius:14px; display:flex; flex-direction:column;}
+  .idcard .ihead{
+    display:flex; align-items:center; justify-content:space-between; gap:10px; padding:9px 15px; background:transparent;
+    border:3px solid var(--line); border-bottom-width:3px;
+    border-top-left-radius:14px; border-top-right-radius:14px;
+    border-bottom-left-radius:0; border-bottom-right-radius:0;
+  }
+  .idcard .ibase{
+    border:1.5px solid var(--line); border-top:none;
+    border-bottom-left-radius:14px; border-bottom-right-radius:14px;
+    display:flex; flex-direction:column; flex:1;
+  }
+  .idcard .tag{font-family:"Cascadia Code",Consolas,monospace; font-size:.62rem; letter-spacing:.2em; text-transform:uppercase; font-weight:700; color:var(--ink);}
+  .idcard h3{font-family:"Cascadia Code",Consolas,monospace; font-weight:700; font-size:.92rem; color:var(--ic,var(--acc)); display:flex; align-items:center; gap:8px;}
+  .idcard .ibody{padding:12px 15px 10px; display:flex; flex-direction:column; gap:9px;}
+  .idcard .ibody p{font-size:.86rem; color:var(--ink); line-height:1.55; font-family:"Segoe UI",system-ui,sans-serif;}
+  .idcard .feats{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:5px;}
+  .idcard .feats li{font-size:.82rem; color:var(--ink); line-height:1.5; display:flex; gap:8px; align-items:baseline; font-family:"Segoe UI",system-ui,sans-serif;}
+  .idcard .feats li i{flex:none; font-style:normal; color:var(--ic,var(--acc)); font-family:"Cascadia Code",Consolas,monospace; font-weight:700;}
+  .idcard .ifoot{
+    margin-top:auto; padding:8px 15px 10px;
+    background:transparent;
+    border-top:1px solid var(--line);
+    font-family:"Cascadia Code",Consolas,monospace; font-size:.68rem; font-weight:700;
+    letter-spacing:.06em; color:var(--ink);
+  }
+  .social-row{display:flex; align-items:center; justify-content:center; gap:8px; margin-top:22px;}
+  .social-link{display:inline-flex; align-items:center; gap:5px; color:var(--mut); text-decoration:none; font-size:.78rem;}
+  .social-link svg{width:14px; height:14px; fill:currentColor;}
+  .social-row .dot{color:var(--acc); margin:0 2px;}
+
+  .term{background:transparent; border:1px solid var(--line); border-radius:10px; padding:15px 17px; font-size:.78rem; line-height:1.45; color:var(--lcdink);}
+  .flows{display:grid; grid-template-columns:1.06fr 1fr; column-gap:24px;}
+  .flow{display:flex; flex-direction:column; gap:7px; min-width:0;}
+  .flow + .flow{border-left:1px solid var(--line); padding-left:24px;}
+  .tline{opacity:0; white-space:nowrap; overflow:hidden; display:flex; align-items:center;}
+  .prompt{color:var(--acc); font-weight:700; margin-right:7px;}
+  .type{display:inline-block; overflow:hidden; white-space:nowrap; vertical-align:bottom; flex:none; animation:digita 40s infinite;}
+  .type{max-width:13ch;} .t2 .type{max-width:9ch;}
+  @keyframes digita{0%,1%{width:0; animation-timing-function:steps(13,end);}4%,97%{width:13ch;}100%{width:0;}}
+  .modo{margin-left:auto; padding-left:14px; color:rgba(255,255,255,.42); font-size:.7rem; letter-spacing:.04em;}
+  .chain{opacity:0; font-size:.7rem; letter-spacing:.03em; color:#CBC0B7; border:1px solid var(--line); border-radius:7px; padding:6px 9px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; text-align:center;}
+  .chain span{color:rgba(255,255,255,.35); padding:0 4px;}
+  .elbow{color:rgba(255,255,255,.4); margin-right:8px;}
+  .e1, .e2{color:rgba(255,255,255,.42);}
+  .okx{color:#7ee08a; font-weight:700;}
+  .dstack{display:inline-grid; margin-right:8px; flex:none;}
+  .dstack > span{grid-area:1/1; opacity:0;}
+  .drun{color:var(--acc);} .dok{color:#7ee08a;}
+  .pulse{display:inline-block; animation:pulsa .9s ease-in-out infinite;}
+  @keyframes pulsa{50%{opacity:.25;}}
+  .steps{display:flex; flex-direction:column; gap:6px;}
+  .step{display:flex; align-items:center; white-space:nowrap; overflow:hidden; opacity:0; font-size:.76rem;}
+  .step b{font-weight:400;}
+  .step i{font-style:normal; margin-left:auto; padding-left:14px; color:rgba(255,255,255,.42); font-size:.7rem; font-variant-numeric:tabular-nums;}
+  .s1{animation:sIn1 40s linear infinite;} .s1 .drun{animation:sRun1 40s linear infinite;} .s1 .dok{animation:sOk1 40s linear infinite;}
+  .s2{animation:sIn2 40s linear infinite;} .s2 .drun{animation:sRun2 40s linear infinite;} .s2 .dok{animation:sOk2 40s linear infinite;}
+  .s3{animation:sIn3 40s linear infinite;} .s3 .drun{animation:sRun3 40s linear infinite;} .s3 .dok{animation:sOk3 40s linear infinite;}
+  .s4{animation:sIn4 40s linear infinite;} .s4 .drun{animation:sRun4 40s linear infinite;} .s4 .dok{animation:sOk4 40s linear infinite;}
+  .s5{animation:sIn5 40s linear infinite;} .s5 .drun{animation:sRun5 40s linear infinite;} .s5 .dok{animation:sOk5 40s linear infinite;}
+  .s6{animation:sIn6 40s linear infinite;} .s6 .drun{animation:sRun6 40s linear infinite;} .s6 .dok{animation:sOk6 40s linear infinite;}
+  @keyframes sIn1{0%,3%{opacity:0}4%,96%{opacity:1}98%,100%{opacity:0}}
+  @keyframes sRun1{0%,3%{opacity:0}4%,8%{opacity:1}9%,100%{opacity:0}}
+  @keyframes sOk1{0%,8%{opacity:0}9%,96%{opacity:1}98%,100%{opacity:0}}
+  @keyframes sIn2{0%,8%{opacity:0}9%,96%{opacity:1}98%,100%{opacity:0}}
+  @keyframes sRun2{0%,8%{opacity:0}9%,13%{opacity:1}14%,100%{opacity:0}}
+  @keyframes sOk2{0%,13%{opacity:0}14%,96%{opacity:1}98%,100%{opacity:0}}
+  @keyframes sIn3{0%,13%{opacity:0}14%,96%{opacity:1}98%,100%{opacity:0}}
+  @keyframes sRun3{0%,13%{opacity:0}14%,18%{opacity:1}19%,100%{opacity:0}}
+  @keyframes sOk3{0%,18%{opacity:0}19%,96%{opacity:1}98%,100%{opacity:0}}
+  @keyframes sIn4{0%,19%{opacity:0}20%,96%{opacity:1}98%,100%{opacity:0}}
+  @keyframes sRun4{0%,19%{opacity:0}20%,23%{opacity:1}24%,100%{opacity:0}}
+  @keyframes sOk4{0%,23%{opacity:0}24%,96%{opacity:1}98%,100%{opacity:0}}
+  @keyframes sIn5{0%,28%{opacity:0}29%,96%{opacity:1}98%,100%{opacity:0}}
+  @keyframes sRun5{0%,28%{opacity:0}29%,33%{opacity:1}34%,100%{opacity:0}}
+  @keyframes sOk5{0%,33%{opacity:0}34%,96%{opacity:1}98%,100%{opacity:0}}
+  @keyframes sIn6{0%,34%{opacity:0}35%,96%{opacity:1}98%,100%{opacity:0}}
+  @keyframes sRun6{0%,34%{opacity:0}35%,39%{opacity:1}40%,100%{opacity:0}}
+  @keyframes sOk6{0%,39%{opacity:0}40%,96%{opacity:1}98%,100%{opacity:0}}
+  .t1{animation:k_t1 40s linear infinite;}
+  @keyframes k_t1{0%,0%{opacity:0}1%,96%{opacity:1}98%,100%{opacity:0}}
+  .c1{animation:k_c1 40s linear infinite;}
+  @keyframes k_c1{0%,2%{opacity:0}3%,96%{opacity:1}98%,100%{opacity:0}}
+  .e1{animation:k_e1 40s linear infinite;}
+  @keyframes k_e1{0%,25%{opacity:0}26%,96%{opacity:1}98%,100%{opacity:0}}
+  .t2{animation:k_t2 40s linear infinite;}
+  @keyframes k_t2{0%,27%{opacity:0}28%,96%{opacity:1}98%,100%{opacity:0}}
+  .c2{animation:k_c2 40s linear infinite;}
+  @keyframes k_c2{0%,29%{opacity:0}30%,96%{opacity:1}98%,100%{opacity:0}}
+  .e2{animation:k_e2 40s linear infinite;}
+  @keyframes k_e2{0%,41%{opacity:0}42%,96%{opacity:1}98%,100%{opacity:0}}
+
+  .handoff{margin-top:auto; padding-top:13px; opacity:0; animation:k_ho 40s linear infinite; display:flex; justify-content:center;}
+  @keyframes k_ho{0%,44%{opacity:0}45%,96%{opacity:1}98%,100%{opacity:0}}
+  .handoff .hbox{background:var(--accsoft); border:1.5px solid var(--acc); border-radius:7px; padding:5px 18px; box-shadow:0 2px 0 rgba(242,145,110,.45), 0 6px 14px -6px rgba(0,0,0,.6); animation:btnGlow 2.4s ease-in-out infinite;}
+  @keyframes btnGlow{50%{box-shadow:0 2px 0 rgba(242,145,110,.45), 0 0 12px rgba(242,145,110,.35);}}
+  .handoff .hrun{display:flex; align-items:center; gap:8px; font-size:.74rem; font-weight:700; color:#FBEEE0; white-space:nowrap; line-height:1.3;}
+  .handoff .play{color:var(--acc); font-size:.72rem;}
+  .handoff b{color:var(--acc); font-weight:700; letter-spacing:.04em;}
+  .caret{display:inline-block; width:7px; height:12px; background:var(--acc); vertical-align:-2px; animation:pisca 1s steps(1) infinite;}
+  @keyframes pisca{50%{opacity:0;}}
+  .idcard .ihead{border:1.5px solid var(--line); border-bottom:none; border-radius:12px 12px 0 0; padding:9px 14px;}
+  .idcard .ibase{border:1.5px solid var(--line); border-top:1px solid var(--line); border-radius:0 0 12px 12px;}
+
+  .ihead .minicat{width:22px; height:auto; display:block;}
+  @keyframes patrolMini{ from{ left:0; } to{ left:calc(100% - 22px); } }
+  .ihead .nome-pixel{height:13px; width:auto; display:block;}
+  .ihead .nome-pixel g{fill:#CBC0B7;}
+
+  .titulo-pixel{display:flex; justify-content:center; margin-top:2px;}
+  .titulo-pixel svg{height:44px; width:auto;}
+  .walkerlane{height:60px; margin:16px 0 6px;}
+  .walker{width:60px; animation:patrol 4.5s ease-in-out infinite alternate;}
+  @keyframes patrol{ from{ transform:translateX(0px); } to{ transform:translateX(814px); } }
+  @keyframes patrolTopo{ from{ transform:translateX(0px); } to{ transform:translateX(830px); } }
+
+  .walker2{width:60px; animation:patrol2 4.5s ease-in-out infinite alternate;}
+  @keyframes patrol2{ from{ transform:translateX(0px); } to{ transform:translateX(767px); } }
+</style>
+<div class="frame">
+  <div class="cart">
+    
+    <div class="brandmark">
+      
+      <svg class="brandname-pixel" viewBox="0 0 11 9" shape-rendering="crispEdges" role="img" aria-label="QA" xmlns="http://www.w3.org/2000/svg"><g><rect x="1" y="0" width="3" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="4" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/><rect x="0" y="5" width="1" height="1"/><rect x="3" y="5" width="1" height="1"/><rect x="1" y="6" width="2" height="1"/><rect x="4" y="6" width="1" height="1"/><rect x="7" y="0" width="3" height="1"/><rect x="6" y="1" width="1" height="1"/><rect x="10" y="1" width="1" height="1"/><rect x="6" y="2" width="1" height="1"/><rect x="10" y="2" width="1" height="1"/><rect x="6" y="3" width="5" height="1"/><rect x="6" y="4" width="1" height="1"/><rect x="10" y="4" width="1" height="1"/><rect x="6" y="5" width="1" height="1"/><rect x="10" y="5" width="1" height="1"/><rect x="6" y="6" width="1" height="1"/><rect x="10" y="6" width="1" height="1"/></g></svg>
+      <span class="gatolane"><svg id="gato" viewBox="0 0 13 11" shape-rendering="crispEdges" aria-label="gatinha pixel, minha assinatura" xmlns="http://www.w3.org/2000/svg">
+        <g class="corpo">
+          <rect x="1" y="0" width="1" height="1"/><rect x="11" y="0" width="1" height="1"/>
+          <rect x="1" y="1" width="2" height="1"/><rect x="10" y="1" width="2" height="1"/>
+          <rect x="1" y="2" width="1" height="1"/><rect x="3" y="2" width="7" height="1"/><rect x="11" y="2" width="1" height="1"/>
+          <rect x="0" y="3" width="1" height="1"/><rect x="12" y="3" width="1" height="1"/>
+          <rect x="0" y="4" width="1" height="1"/><rect x="12" y="4" width="1" height="1"/>
+          <rect x="0" y="5" width="1" height="1"/><rect x="6" y="5" width="1" height="1"/><rect x="12" y="5" width="1" height="1"/>
+          <rect x="0" y="6" width="1" height="1"/><rect x="5" y="6" width="1" height="1"/><rect x="7" y="6" width="1" height="1"/><rect x="12" y="6" width="1" height="1"/>
+          <rect x="1" y="7" width="1" height="1"/><rect x="11" y="7" width="1" height="1"/>
+          <rect x="1" y="8" width="1" height="1"/><rect x="11" y="8" width="1" height="1"/>
+          <rect x="0" y="9" width="1" height="1"/><rect x="12" y="9" width="1" height="1"/>
+          <rect x="1" y="10" width="11" height="1"/>
+        </g>
+        <g class="olhos">
+          <rect class="olho" x="3" y="4" width="1" height="1"/>
+          <rect class="olho" x="9" y="4" width="1" height="1"/>
+        </g>
+      </svg></span>
+      <div class="slots" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+    <section class="painel" style="margin-top:14px; padding-top:0;">
+
+      <div class="combo" style="margin-bottom:11px;">
+        <div class="terminline">
+          <span class="prompt">❯</span>
+          <p>Sou analista de QA e estou me especializando em projetos que focam em acelerar o fluxo de QA; por isso desenvolvi e integro agentes de IA para automatizar tarefas repetitivas, aumentar a consistência e tornar o processo de QA mais claro, rastreável e útil para o time.<span class="caret"></span></p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="painel" style="margin-top:22px;">
+      
+      <div class="idgrid mono">
+        <div class="idcard">
+          <span class="aba" style="left:50%; transform:translateX(-50%); white-space:nowrap; border-radius:999px; background:var(--accsoft); border:1.5px solid var(--acc); color:#FBEEE0; text-transform:uppercase; padding:5px 16px;">🚧 em breve</span>
+          <div class="ihead"><h3><svg class="minicat" viewBox="0 0 13 11" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg"><g fill="var(--acc)"><rect x="1" y="0" width="1" height="1"/><rect x="11" y="0" width="1" height="1"/><rect x="1" y="1" width="2" height="1"/><rect x="10" y="1" width="2" height="1"/><rect x="1" y="2" width="1" height="1"/><rect x="3" y="2" width="7" height="1"/><rect x="11" y="2" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="12" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="12" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="9" y="4" width="1" height="1"/><rect x="0" y="5" width="1" height="1"/><rect x="6" y="5" width="1" height="1"/><rect x="12" y="5" width="1" height="1"/><rect x="0" y="6" width="1" height="1"/><rect x="5" y="6" width="1" height="1"/><rect x="7" y="6" width="1" height="1"/><rect x="12" y="6" width="1" height="1"/><rect x="1" y="7" width="1" height="1"/><rect x="11" y="7" width="1" height="1"/><rect x="1" y="8" width="1" height="1"/><rect x="11" y="8" width="1" height="1"/><rect x="0" y="9" width="1" height="1"/><rect x="12" y="9" width="1" height="1"/><rect x="1" y="10" width="11" height="1"/></g></svg><svg class="nome-pixel" viewBox="0 0 32 9" shape-rendering="crispEdges" role="img" aria-label="qa code" xmlns="http://www.w3.org/2000/svg"><g fill="var(--acc)"><rect x="1" y="2" width="2" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/><rect x="0" y="5" width="1" height="1"/><rect x="3" y="5" width="1" height="1"/><rect x="1" y="6" width="3" height="1"/><rect x="3" y="7" width="1" height="1"/><rect x="3" y="8" width="1" height="1"/><rect x="6" y="2" width="2" height="1"/><rect x="8" y="3" width="1" height="1"/><rect x="6" y="4" width="3" height="1"/><rect x="5" y="5" width="1" height="1"/><rect x="8" y="5" width="1" height="1"/><rect x="6" y="6" width="3" height="1"/><rect x="14" y="2" width="3" height="1"/><rect x="13" y="3" width="1" height="1"/><rect x="13" y="4" width="1" height="1"/><rect x="13" y="5" width="1" height="1"/><rect x="14" y="6" width="3" height="1"/><rect x="19" y="2" width="2" height="1"/><rect x="18" y="3" width="1" height="1"/><rect x="21" y="3" width="1" height="1"/><rect x="18" y="4" width="1" height="1"/><rect x="21" y="4" width="1" height="1"/><rect x="18" y="5" width="1" height="1"/><rect x="21" y="5" width="1" height="1"/><rect x="19" y="6" width="2" height="1"/><rect x="26" y="0" width="1" height="1"/><rect x="26" y="1" width="1" height="1"/><rect x="24" y="2" width="3" height="1"/><rect x="23" y="3" width="1" height="1"/><rect x="26" y="3" width="1" height="1"/><rect x="23" y="4" width="1" height="1"/><rect x="26" y="4" width="1" height="1"/><rect x="23" y="5" width="1" height="1"/><rect x="26" y="5" width="1" height="1"/><rect x="24" y="6" width="3" height="1"/><rect x="29" y="2" width="2" height="1"/><rect x="28" y="3" width="1" height="1"/><rect x="31" y="3" width="1" height="1"/><rect x="28" y="4" width="4" height="1"/><rect x="28" y="5" width="1" height="1"/><rect x="29" y="6" width="3" height="1"/></g></svg></h3><span class="tag" style="text-transform:none;letter-spacing:.05em;">Fable 5 · Claude Pro</span></div>
+          <div class="ibase">
+            <div class="ibody">
+              <div class="term mono">
+                <div class="flows">
+                  <div class="flow">
+                    <div class="tline t1"><span class="prompt">❯</span><span class="type">/estrategista</span><span class="modo">🛰 automático · a cada 10 min</span></div>
+                    <div class="chain c1">Tarefa QA<span>→</span>GitHub Actions<span>→</span>Agentes de IA</div>
+                    <div class="steps">
+                    <div class="step s1"><span class="dstack"><span class="drun"><span class="pulse">⏺</span></span><span class="dok">✓</span></span><b>🧠 Gestora de Memória</b><i>memória do app consolidada</i></div>
+                    <div class="step s2"><span class="dstack"><span class="drun"><span class="pulse">⏺</span></span><span class="dok">✓</span></span><b>🔎 Analista de Card</b><i>5 critérios de aceite</i></div>
+                    <div class="step s3"><span class="dstack"><span class="drun"><span class="pulse">⏺</span></span><span class="dok">✓</span></span><b>🔬 Analista de PR</b><i>4 comportamentos + 1 alerta</i></div>
+                    <div class="step s4"><span class="dstack"><span class="drun"><span class="pulse">⏺</span></span><span class="dok">✓</span></span><b>🎯 Estrategista QA</b><i>2 riscos priorizados</i></div>
+                    </div>
+                    <div class="tline e1"><span class="elbow">⎿</span>card QA preenchido · tag /qase 🥒</div>
+                  </div>
+                  <div class="flow">
+                    <div class="tline t2"><span class="prompt">❯</span><span class="type">/qase</span><span class="modo">▶ disparo manual</span></div>
+                    <div class="chain c2">GitHub Actions<span>→</span>Agentes IA<span>→</span>Qase</div>
+                    <div class="steps">
+                    <div class="step s5"><span class="dstack"><span class="drun"><span class="pulse">⏺</span></span><span class="dok">✓</span></span><b>🥒 Especialista BDD</b><i>5 cenários Gherkin</i></div>
+                    <div class="step s6"><span class="dstack"><span class="drun"><span class="pulse">⏺</span></span><span class="dok">✓</span></span><b>📤 Publicadora Qase</b><i>suites + cases + plano</i></div>
+                    </div>
+                    <div class="tline e2"><span class="elbow">⎿</span>pronto pra testar · run criado</div>
+                    <div class="handoff">
+                      <div class="hbox">
+                        <div class="hrun"><span class="play">▶</span><b>run:</b> aguardando testes</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ifoot" style="color:var(--acc);">↗ github.com/schlossertefa/QAgents <span style="font-weight:400; color:rgba(255,255,255,.55);">· auto mode on ⏎ send</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+</div>
+</foreignObject>
+</svg>
